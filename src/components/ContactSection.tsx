@@ -9,22 +9,22 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["(407) 555-0123", "Call for appointments"]
+    details: ["(407) 366-7766", "Call for appointments"]
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["info@oviedohearing.com", "We respond within 24 hours"]
+    details: ["oviedohearing@gmail.com", "We respond within 24 hours"]
   },
   {
     icon: MapPin,
     title: "Location", 
-    details: ["123 Oviedo Mall Blvd", "Oviedo, FL 32765"]
+    details: ["110 Burnsed Place, Suite 1000", "Oviedo, FL 32765"]
   },
   {
     icon: Clock,
     title: "Hours",
-    details: ["Mon-Fri: 9AM-5PM", "Sat: 9AM-1PM"]
+    details: ["Monday-Thursday", "9:00 AM – 3:00 PM"]
   }
 ];
 
@@ -121,7 +121,7 @@ export const ContactSection = () => {
                 variant="secondary"
                 className="bg-white text-clinic-primary hover:bg-clinic-calm px-8 py-3 font-semibold rounded-xl"
               >
-                Call Now: (407) 555-0123
+                Call Now: (407) 366-7766
               </Button>
             </CardContent>
           </Card>

@@ -46,15 +46,25 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-clinic-accent" />
-                <span className="text-white/80">(555) 123-4567</span>
+                <span className="text-white/80">(407) 366-7766</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-clinic-accent" />
-                <span className="text-white/80">info@clearsound.com</span>
+                <span className="text-white/80">oviedohearing@gmail.com</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-clinic-accent" />
-                <span className="text-white/80">123 Wellness Street</span>
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-4 h-4 text-clinic-accent mt-0.5" />
+                <div className="text-white/80">
+                  <div>110 Burnsed Place, Suite 1000</div>
+                  <div>Oviedo, FL 32765</div>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-4 h-4 text-clinic-accent mt-0.5">🕒</div>
+                <div className="text-white/80">
+                  <div>Monday-Thursday</div>
+                  <div>9:00 AM – 3:00 PM</div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Professional Oviedo Color System */
+    --bg: 37 100% 97%;           /* #FFF9F3 - soft warm background */
+    --surface: 0 0% 100%;        /* #FFFFFF - cards/sections */
+    --primary-600: 19 75% 55%;   /* #E86F2D - Oviedo orange main */
+    --primary-700: 19 75% 47%;   /* #D9611F - hover/active */
+    --primary-100: 25 100% 90%;  /* #FFE1CE - tints */
+    --accent-600: 176 89% 32%;   /* #0FA39A - teal-green accent */
+    --accent-100: 176 66% 88%;   /* #CFF5F1 - accent tint */
+    --text-900: 222 84% 11%;     /* #0F172A - headings */
+    --text-700: 215 25% 27%;     /* #334155 - body copy */
+    --text-inv: 0 0% 100%;       /* #FFFFFF - on dark */
+    --border: 220 13% 91%;       /* #E5E7EB */
+    --ring: 176 89% 32%;         /* #0FA39A - focus ring */
+
+    /* Legacy shadcn compatibility */
+    --background: var(--bg);
+    --foreground: var(--text-900);
+    --card: var(--surface);
+    --card-foreground: var(--text-900);
+    --popover: var(--surface);
+    --popover-foreground: var(--text-900);
+    --primary: var(--primary-600);
+    --primary-foreground: var(--text-inv);
+    --secondary: var(--primary-100);
+    --secondary-foreground: var(--text-900);
+    --muted: 220 13% 95%;
+    --muted-foreground: var(--text-700);
+    --accent: var(--accent-600);
+    --accent-foreground: var(--text-inv);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--text-inv);
+    --input: var(--border);
+    --radius: 0.875rem;
+    
+    /* Modern Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-600)), hsl(var(--primary-700)));
+    --gradient-hero: linear-gradient(165deg, hsl(var(--primary-100)), hsl(37 60% 94%));
+    --gradient-card: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--primary-100)));
+    
+    /* Professional Shadows */
+    --shadow-soft: 0 2px 8px hsl(var(--text-900) / 0.06);
+    --shadow-focus: 0 8px 30px hsl(var(--primary-600) / 0.15);
+    --shadow-hero: 0 20px 60px hsl(var(--text-900) / 0.08);
+    
+    /* Animation Timing */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 8%;
+    --foreground: 200 25% 95%;
+
+    --card: 215 25% 12%;
+    --card-foreground: 200 25% 95%;
+
+    --popover: 215 25% 12%;
+    --popover-foreground: 200 25% 95%;
+
+    --primary: 25 95% 55%;
+    --primary-foreground: 215 25% 8%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: hsl(var(--bg));
+    color: hsl(var(--text-900));
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Professional Typography Scale */
+  .text-hero {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: hsl(var(--text-900));
+  }
+  
+  .text-section-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: hsl(var(--text-900));
+  }
+  
+  .text-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: hsl(var(--text-900));
+  }
+  
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: hsl(var(--text-700));
+    max-width: 70ch;
+  }
+  
+  .text-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: hsl(var(--text-700));
+    max-width: 65ch;
+  }
+  
+  /* Motion & Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-gentle {
+    animation: pulse-gentle 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+  
+  .animate-wave {
+    animation: wave-drift 4s ease-in-out infinite;
+  }
+  
+  .animate-wave-delayed {
+    animation: wave-drift 4s ease-in-out infinite 1s;
+  }
+  
+  .animate-wave-delayed-2 {
+    animation: wave-drift 4s ease-in-out infinite 2s;
+  }
+  
+  /* Professional Card Effects */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-focus);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--surface) / 0.9);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  /* Focus Management */
+  .focus-ring {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+  
+  /* Accessibility - Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-pulse-gentle,
+    .animate-slide-up,
+    .animate-wave,
+    .animate-wave-delayed,
+    .animate-wave-delayed-2 {
+      animation: none;
+    }
+    
+    .card-hover {
+      transition: none;
+    }
+  }
+}
+
+/* Custom Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wave-drift {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: translateX(0px) translateY(0px); 
+  }
+  25% { 
+    opacity: 0.7; 
+    transform: translateX(8px) translateY(-2px); 
+  }
+  50% { 
+    opacity: 0.9; 
+    transform: translateX(15px) translateY(0px); 
+  }
+  75% { 
+    opacity: 0.6; 
+    transform: translateX(10px) translateY(2px); 
+  }
+}

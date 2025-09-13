@@ -130,7 +130,7 @@ export const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-4 z-10" style={{ maxWidth: '1200px' }}>
-        <div className="flex flex-col-reverse md:flex-row gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)]">
+        <div className="flex flex-col md:flex-row gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)]">
           {/* Hero Content */}
           <div className="flex-1 text-center md:text-left animate-slide-up space-y-6">
             {/* Google Rating */}

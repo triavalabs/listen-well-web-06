@@ -130,11 +130,11 @@ export const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-4 z-10" style={{ maxWidth: '1200px' }}>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)]">
+        <div className="flex flex-col-reverse md:flex-row gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)]">
           {/* Hero Content */}
-          <div className="text-center lg:text-left animate-slide-up space-y-6">
+          <div className="flex-1 text-center md:text-left animate-slide-up space-y-6">
             {/* Google Rating */}
-            <div className="flex items-center justify-center lg:justify-start">
+            <div className="flex items-center justify-center md:justify-start">
               <div className="flex items-center px-4 py-2 rounded-full border"
                    style={{ 
                      backgroundColor: 'hsl(var(--surface))', 
@@ -147,28 +147,37 @@ export const HeroSection = () => {
             </div>
 
             <h1 className="text-hero">
-              <span className="block" style={{ color: 'hsl(var(--primary-600))' }}>Helping Oviedo</span>
-              <span className="block" style={{ color: 'hsl(var(--text-900))' }}>Hear Better</span>
+              <span className="block" style={{ color: 'hsl(var(--primary-600))' }}>Hear the World,</span>
+              <span className="block" style={{ color: 'hsl(var(--text-900))' }}>Feel the Difference</span>
             </h1>
             
-            <p className="text-body-lg max-w-2xl mx-auto lg:mx-0">
-              Modern hearing solutions with personalized care. 
-              Experience the difference with our expert team and advanced technology.
+            <p className="text-body-lg max-w-2xl mx-auto md:mx-0">
+              Rediscover the joy of everyday sounds — laughter, conversation, and connection. Our personalized care helps you not just hear better, but live better.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
               <Button size="lg">
                 Book Now
               </Button>
-              <Button variant="outline" size="lg">
-                Call Today
+              <Button variant="outline" size="lg" asChild>
+                <a href="tel:+14073667766">Call Today</a>
               </Button>
             </div>
           </div>
           
-          {/* Biometric Head Illustration - Desktop: right, Mobile: below */}
-          <div className="relative flex justify-center lg:justify-end order-first lg:order-last">
-            <BiometricHeadIllustration />
+          {/* Biometric Head Illustration */}
+          <div className="flex-1 flex justify-center md:justify-end">
+            <div className="relative w-full max-w-[520px]">
+              <img 
+                src={biometricHeadImage}
+                alt="Futuristic head with ear technology"
+                className="w-full h-auto object-contain animate-glow-pulse"
+                style={{ 
+                  filter: 'drop-shadow(0 0 30px hsl(var(--biometric-500) / 0.4))',
+                  maxWidth: '520px'
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

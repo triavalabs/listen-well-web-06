@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import cynthiaSeatedImg from "@/assets/cynthia-seated.jpg";
+import cynthiaSeatedImg from "@/assets/cynthia-seated-upright.jpg";
 
 export const MeetCynthiaSection = () => {
   return (

@@ -38,9 +38,13 @@ export const Header = () => {
           
           {/* CTA Button */}
           <Button 
-            className="bg-gradient-primary text-white px-6 py-2 font-semibold rounded-xl hover:shadow-focus transition-all duration-300 hover:scale-105"
+            className="px-6 py-2 font-semibold rounded-xl hover:shadow-focus transition-all duration-300 hover:scale-105"
+            style={{ 
+              background: 'hsl(var(--primary-600))', 
+              color: 'hsl(var(--text-inv))' 
+            }}
           >
-            Book Now
+            Book a Consultation
           </Button>
         </div>
       </div>

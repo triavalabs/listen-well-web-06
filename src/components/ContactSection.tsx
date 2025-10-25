@@ -32,10 +32,10 @@ export const ContactSection = () => {
   return (
     <Section id="contact">
       <div className="text-center mb-16">
-        <h2 className="text-section-title mb-6 text-clinic-trust">
+        <h2 className="text-section-title mb-6" style={{ color: 'hsl(var(--text-900))' }}>
           Contact Us
         </h2>
-        <p className="text-lg text-clinic-trust/80 max-w-2xl mx-auto">
+        <p className="text-lg max-w-2xl mx-auto" style={{ color: 'hsl(var(--text-700))' }}>
           Visit our Oviedo location or schedule your consultation today. 
           We're here to help you hear better.
         </p>
@@ -45,7 +45,7 @@ export const ContactSection = () => {
         {/* Contact Form */}
         <Card className="bg-white border-0 shadow-soft">
           <CardHeader>
-            <CardTitle className="text-2xl text-clinic-trust">
+            <CardTitle className="text-2xl" style={{ color: 'hsl(var(--text-900))' }}>
               Schedule Your Consultation
             </CardTitle>
           </CardHeader>
@@ -53,29 +53,33 @@ export const ContactSection = () => {
             <div className="grid md:grid-cols-2 gap-4">
               <Input 
                 placeholder="First Name" 
-                className="border-clinic-secondary focus:border-clinic-primary rounded-xl"
+                className="rounded-xl"
               />
               <Input 
                 placeholder="Last Name" 
-                className="border-clinic-secondary focus:border-clinic-primary rounded-xl"
+                className="rounded-xl"
               />
             </div>
             <Input 
               placeholder="Email Address" 
               type="email"
-              className="border-clinic-secondary focus:border-clinic-primary rounded-xl"
+              className="rounded-xl"
             />
             <Input 
               placeholder="Phone Number" 
               type="tel"
-              className="border-clinic-secondary focus:border-clinic-primary rounded-xl"
+              className="rounded-xl"
             />
             <Textarea 
               placeholder="Tell us about your hearing concerns..."
-              className="border-clinic-secondary focus:border-clinic-primary rounded-xl min-h-32"
+              className="rounded-xl min-h-32"
             />
             <Button 
-              className="w-full bg-gradient-primary text-white py-6 text-lg font-semibold rounded-xl shadow-focus hover:shadow-hero transition-all duration-300 hover:scale-105"
+              className="w-full py-6 text-lg font-semibold rounded-xl shadow-focus hover:shadow-hero transition-all duration-300 hover:scale-105"
+              style={{ 
+                background: 'hsl(var(--primary-600))', 
+                color: 'hsl(var(--text-inv))' 
+              }}
             >
               Request Consultation
             </Button>
@@ -87,19 +91,20 @@ export const ContactSection = () => {
           {contactInfo.map((item, index) => (
             <Card 
               key={index} 
-              className="card-hover bg-gradient-card border-0 shadow-soft"
+              className="card-hover bg-white border-0 shadow-soft"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="flex items-start space-x-4 p-6">
-                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                     style={{ background: 'hsl(var(--primary-600))' }}>
+                  <item.icon className="w-6 h-6" style={{ color: 'hsl(var(--text-inv))' }} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-clinic-trust mb-2">
+                  <h3 className="font-semibold mb-2" style={{ color: 'hsl(var(--text-900))' }}>
                     {item.title}
                   </h3>
                   {item.details.map((detail, idx) => (
-                    <p key={idx} className="text-clinic-trust/70">
+                    <p key={idx} style={{ color: 'hsl(var(--text-700))' }}>
                       {detail}
                     </p>
                   ))}
@@ -109,19 +114,24 @@ export const ContactSection = () => {
           ))}
           
           {/* Emergency CTA */}
-          <Card className="bg-gradient-primary border-0 shadow-focus text-white">
+          <Card className="border-0 shadow-focus" style={{ background: 'hsl(var(--primary-600))' }}>
             <CardContent className="p-8 text-center">
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="text-xl font-semibold mb-4" style={{ color: 'hsl(var(--text-inv))' }}>
                 Need Immediate Assistance?
               </h3>
-              <p className="mb-6 opacity-90">
+              <p className="mb-6" style={{ color: 'hsl(var(--text-inv) / 0.9)' }}>
                 Our team is standing by to help with urgent hearing concerns.
               </p>
-               <Button 
+              <Button 
+                asChild
                 variant="secondary"
-                className="bg-white text-clinic-primary hover:bg-clinic-calm px-8 py-3 font-semibold rounded-xl"
+                className="px-8 py-3 font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+                style={{ 
+                  background: 'hsl(var(--surface))',
+                  color: 'hsl(var(--primary-600))'
+                }}
               >
-                Call Now: (407) 366-7766
+                <a href="tel:+14073667766">Call Now: (407) 366-7766</a>
               </Button>
             </CardContent>
           </Card>

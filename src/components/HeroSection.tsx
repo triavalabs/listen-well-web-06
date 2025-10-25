@@ -133,33 +133,52 @@ export const HeroSection = () => {
         <div className="flex flex-col md:flex-row gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)]">
           {/* Hero Content */}
           <div className="flex-1 text-center md:text-left animate-slide-up space-y-6">
-            {/* Google Rating */}
+            {/* Since 2002 Badge */}
             <div className="flex items-center justify-center md:justify-start">
-              <div className="flex items-center px-4 py-2 rounded-full border"
+              <div className="inline-block px-4 py-2 rounded-full"
                    style={{ 
-                     backgroundColor: 'hsl(var(--surface))', 
-                     borderColor: 'hsl(var(--border))',
-                     boxShadow: 'var(--shadow-soft)'
+                     background: 'linear-gradient(to right, hsl(var(--accent-100)), hsl(var(--accent-300)))',
+                     border: '1px solid hsl(var(--accent-400))'
                    }}>
-                <span className="font-bold text-lg mr-2" style={{ color: 'hsl(var(--accent-600))' }}>★★★★★</span>
-                <span className="font-semibold text-sm" style={{ color: 'hsl(var(--text-900))' }}>4.9/5 on Google</span>
+                <span className="text-sm font-semibold" style={{ color: 'hsl(var(--accent-700))' }}>
+                  Trusted Hearing Care Since 2002
+                </span>
               </div>
             </div>
 
             <h1 className="text-hero">
-              <span className="block" style={{ color: 'hsl(var(--primary-600))' }}>Hear the World,</span>
+              <span className="block" style={{ color: 'hsl(var(--text-900))' }}>Hear the World,</span>
               <span className="block" style={{ color: 'hsl(var(--text-900))' }}>Feel the Difference</span>
             </h1>
             
-            <p className="text-body-lg max-w-2xl mx-auto md:mx-0">
-              Rediscover the joy of everyday sounds — laughter, conversation, and connection. Our personalized care helps you not just hear better, but live better.
+            <p className="text-body-lg max-w-2xl mx-auto md:mx-0" style={{ color: 'hsl(var(--text-700))' }}>
+              Rediscover the joy of everyday sounds — laughter, conversation, and connection. 
+              With over 20 years of caring for our Oviedo community, we provide personalized hearing 
+              care that helps you not just hear better, but live better.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-              <Button size="lg">
-                Book Now
+              <Button 
+                size="lg"
+                className="px-8 py-3 text-lg font-semibold rounded-2xl shadow-focus hover:shadow-hero transition-all duration-300 hover:scale-105"
+                style={{ 
+                  background: 'hsl(var(--primary-600))', 
+                  color: 'hsl(var(--text-inv))' 
+                }}
+              >
+                Book a Consultation
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button 
+                asChild
+                variant="outline" 
+                size="lg"
+                className="px-8 py-3 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-105"
+                style={{ 
+                  borderColor: 'hsl(var(--accent-600))',
+                  borderWidth: '2px',
+                  color: 'hsl(var(--accent-600))'
+                }}
+              >
                 <a href="tel:+14073667766">Call Today</a>
               </Button>
             </div>
